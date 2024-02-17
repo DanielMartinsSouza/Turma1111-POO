@@ -3,8 +3,11 @@ package Aula1602.NewPackage;
 public class NewImport {
     public String newMensagem;
     private String text;
+    protected int numero;
 
-    private NewImport(){
+    int teste;
+
+    public NewImport(){
         System.out.println("Construtor privado");
     }
 
@@ -16,15 +19,23 @@ public class NewImport {
     public String getText(){
         return this.text;
     }
+
     public void imprimirMensagem(String mensagem){
         System.out.println(mensagem);
     }
     private void novoImprimirMensagem(String mensagem){
         System.out.println(mensagem);
     }
+    protected void novoImprimirMensagem2(String mensagem){
+        System.out.println(mensagem);
+    }
 }
 
-class NewImport2 {
+class NewImport2 extends NewImport{
+    public static void main(String[] args) {
+        NewImport newImport = new NewImport("Teste");
+        newImport.numero = 4;
+    }
     public String newMensagem;
     public void imprimirMensagem(String mensagem){
         System.out.println(mensagem);
